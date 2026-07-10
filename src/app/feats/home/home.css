@@ -1,0 +1,84 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Estilos do Main */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 4rem 1.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+div {
+  margin-bottom: 5rem;
+  padding-bottom: 3rem;
+  border-bottom: 3px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+h2 {  
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  max-width: 700px;
+}
+
+/* Links de contato */
+/* Links de Contato */
+#contato .social-links {          /* Adicione essa classe no HTML */
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+#contato a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: #f8fafc;
+  color: #1e40af;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid #dbeafe;
+  transition: all 0.3s ease;
+}
+
+#contato a:hover {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(59, 130, 246, 0.25);
+}

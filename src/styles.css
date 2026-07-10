@@ -1,1 +1,162 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sticky Footer */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;           /* Isso faz o main ocupar todo o espaço disponível */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin-top: 50px;   /* Importante */
+}
+
+/* ===================== DARK THEME ===================== */
+
+/* ===================== DARK MODE ===================== */
+
+.dark{
+    background-color: #0f172a;
+    color: #e2e8f0;
+    transition: .3s ease;
+}
+
+/* Header */
+
+.dark .header-main{
+    background: #111827;
+    border-bottom: 1px solid #334155;
+}
+
+.dark .second-header{
+    background: #111827;
+}
+
+.dark .header-main h1{
+    color: white;
+}
+
+.dark nav a{
+    color: #cbd5e1;
+}
+
+.dark nav a:hover{
+    color: #60a5fa;
+}
+
+.dark nav a::after{
+    background: #60a5fa;
+}
+
+/* Main */
+
+.dark main{
+    background: #1e293b;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.45),
+        0 5px 15px rgba(0,0,0,.30);
+}
+
+/* Seções */
+
+.dark section{
+    background: transparent;
+}
+
+/* Títulos */
+
+.dark h2{
+    color: #f8fafc;
+    margin-bottom: 18px;
+}
+
+/* Texto */
+
+.dark p{
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* Botão */
+
+.dark button{
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+.dark button:hover{
+    background: #3b82f6;
+}
+
+/* Contatos */
+
+.dark .social-links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.dark .social-links a{
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    background: #111827;
+
+    color: #e2e8f0;
+
+    border: 1px solid #334155;
+
+    transition: .3s;
+}
+
+.dark .social-links a:hover{
+    background: #2563eb;
+    border-color: #60a5fa;
+
+    transform: translateY(-3px);
+}
+
+/* Footer */
+
+.dark footer{
+    background: #111827;
+}
+
+.dark .footer-links a{
+    color: #cbd5e1;
+}
+
+.dark .footer-links a:hover{
+    color: #60a5fa;
+}

@@ -1,0 +1,102 @@
+
+
+body{
+    background: #0f172a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.c{
+    width: 100%;
+}
+
+.header-main{
+    height: 80px;
+    padding: 0 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #111827;
+    border-bottom: 1px solid #1f2937;
+}
+
+.header-main h1{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    list-style: none;
+}
+
+.menu a{
+    position: relative;
+
+    color: #e5e7eb;
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    transition: color .3s ease;
+}
+
+.menu a:hover{
+    color: #3b82f6;
+}
+
+/* Linha animada embaixo */
+
+.menu a::after{
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #3b82f6;
+    transition: width .3s ease;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+
+.sub-title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 1.5rem;
+    color: #94a3b8;
+}
+
+.second-header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 40px;
+}
+
+button{
+    margin-left: auto;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
