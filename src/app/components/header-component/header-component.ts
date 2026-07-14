@@ -9,8 +9,14 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   alterarTema(){
     document.body.classList.toggle('dark')
-    
-    console.log(document.body.className);
+    const btn = document.querySelector('button')
+    if(btn){
+      if(document.body.classList.contains('dark')){
+        btn.innerHTML = "Claro"
+      }else{
+        btn.innerHTML = "Escuro"
+      }
+    }
 
   }
 }

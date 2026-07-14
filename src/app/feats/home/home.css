@@ -82,3 +82,8 @@ p {
   transform: translateY(-4px);
   box-shadow: 0 10px 15px rgba(59, 130, 246, 0.25);
 }
+
+.dark .about p{
+  color: #cbd5e1;
+  line-height: 1.8;
+}

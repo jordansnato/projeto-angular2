@@ -32,7 +32,7 @@ footer {
   margin-top: 50px;   /* Importante */
 }
 
-/* ===================== DARK THEME ===================== */
+
 
 /* ===================== DARK MODE ===================== */
 
@@ -58,7 +58,7 @@ footer {
 }
 
 .dark nav a{
-    color: #cbd5e1;
+    color: #0f172a;
 }
 
 .dark nav a:hover{
@@ -70,6 +70,7 @@ footer {
 }
 
 /* Main */
+
 
 .dark main{
     background: #1e293b;
@@ -88,17 +89,11 @@ footer {
 }
 
 /* Títulos */
-
-.dark h2{
-    color: #f8fafc;
-    margin-bottom: 18px;
-}
-
-/* Texto */
-
-.dark p{
-    color: #cbd5e1;
-    line-height: 1.8;
+.dark h2,
+.dark h1,
+.dark .sub-title,
+.dark .about{
+    color: #f8fafc !important;   /* !important ajuda a forçar no início */
 }
 
 /* Botão */
@@ -118,10 +113,10 @@ footer {
 .dark .social-links{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    
     flex-wrap: wrap;
 
-    margin-top: 25px;
+ 
 }
 
 .dark .social-links a{
