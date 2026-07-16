@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from "@angular/router";
+import { PropBinding } from "../../feats/prop-binding/prop-binding";
+import { TwoBildingText } from "../../feats/two-bilding-text/two-bilding-text";
 
 @Component({
   selector: 'app-header-component',
-  imports: [],
+  imports: [RouterLink, PropBinding, TwoBildingText],
   templateUrl: './header-component.html',
   styleUrl: './header-component.css',
 })
