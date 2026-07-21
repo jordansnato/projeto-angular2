@@ -197,3 +197,17 @@ footer {
 
     } 
 }
+
+@media (max-width: 615px) {
+    .troca-tema{
+        display: inline;
+        width: 40px !important;
+    }
+     .card-main {
+        width: 400px;
+    }
+    h2{
+        font-size: 14px;
+    }
+
+}

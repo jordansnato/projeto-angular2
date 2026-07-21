@@ -15,9 +15,9 @@ export class HeaderComponent {
     const btn = document.querySelector('button')
     if(btn){
       if(document.body.classList.contains('dark')){
-        btn.innerHTML = "Claro"
+        btn.innerHTML = "🔆"
       }else{
-        btn.innerHTML = "Escuro"
+        btn.innerHTML = "⏾"
       }
     }
 

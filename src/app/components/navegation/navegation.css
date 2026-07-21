@@ -7,3 +7,15 @@
     cursor: pointer;
     font-size: 1.9rem;
 }
+
+.cor{
+    color: rgb(27, 2, 2);
+    text-decoration: none;
+   
+    padding: 10px;
+    display: flex;
+}
+
+.cor:hover{
+    background: lightgrey;
+}
