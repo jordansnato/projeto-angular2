@@ -12,17 +12,16 @@ export class Usuarios {
 
     usuarios = signal<InterfaceUser[]>([
       {
-        id: 1,
-        nome: "jordan",
-        idade: 21
-
-      },{
+        id:1,
+        nome:'jordan',
+        idade:21
+      },
+      {
         id:2,
-        nome: "matheus",
-        idade:29
+        nome:'matheus',
+        idade:22,
       }
-    ]
       
-    );
+    ]);
 
 }
