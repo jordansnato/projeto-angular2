@@ -10,18 +10,26 @@ import { InterfaceUser } from './interface-user';
 })
 export class Usuarios {
 
-    usuarios = signal<InterfaceUser[]>([
+    protected usuarios = signal<InterfaceUser[]>([
       {
         id:1,
-        nome:'jordan',
+        nome:'Jordan',
         idade:21
       },
       {
         id:2,
-        nome:'matheus',
-        idade:22,
+        nome:'Matheus',
+        idade:22
+      },
+      {
+        id:3,
+        nome:'João',
+        idade:18
       }
       
     ]);
+    
+
+   
 
 }

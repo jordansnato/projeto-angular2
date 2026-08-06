@@ -1,0 +1,13 @@
+<form (submit)="cadastrarProduto($event)">
+
+    <!-- Titulo -->
+    <input type="text" [formField]="interfaceForm.title">
+
+    <!-- Descrição -->
+     <input type="text" [formField]="interfaceForm.descricao">
+
+     <!-- Preço -->
+      <input type="text" [formField]="interfaceForm.preco">
+
+      <button>Cadastrar produto</button>
+</form>

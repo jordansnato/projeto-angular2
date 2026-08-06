@@ -5,6 +5,7 @@ import { Home } from './feats/home/home';
 import { TwoBildingText } from './feats/two-bilding-text/two-bilding-text';
 import { Signal } from './feats/signal/signal'; 
 import { Usuarios } from './feats/usuarios/usuarios';
+import { ExemploSignalForm } from './feats/exemplo-signal-form/exemplo-signal-form';
 
 export const routes: Routes = [
     {path:'', redirectTo:'home', pathMatch:'full'},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path:'input', component: TwoBildingText},
     {path:'home', component:Home},
     {path:'signal', component: Signal},
-    {path:'user', component:Usuarios}
+    {path:'user', component:Usuarios},
+    {path:'sgnalForm', component:ExemploSignalForm}
 ];

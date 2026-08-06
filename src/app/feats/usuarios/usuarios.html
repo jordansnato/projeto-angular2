@@ -1,3 +1,9 @@
-@for(item of usuarios(); track item.id){
-    <p>{{item.id}}</p>
-}
+
+  @for(usuario of usuarios(); track $index){
+        <p>id: {{usuario.id}} | Nome: {{usuario.nome}}</p>
+    }  
+
+
+
+
+<h1></h1>
