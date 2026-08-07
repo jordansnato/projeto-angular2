@@ -1,0 +1,13 @@
+<form (submit)="cadastrar($event)">
+    <input type="text" [formField]="InterfaceForms.user">
+    <input type="password" [formField]="InterfaceForms.senha">
+
+    <button>conctar</button>
+</form>
+
+@if (userConect()) {
+    <p>usuário conectado</p>
+
+}@else {
+    <p>Usuário desconectado</p>
+}
