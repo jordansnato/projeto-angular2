@@ -10,4 +10,11 @@
       <input type="text" [formField]="interfaceForm.preco">
 
       <button>Cadastrar produto</button>
-</form>
+    </form>
+    
+    <button (click)="mostrarProduto()">Mostrar Lista</button> 
+    @if(mostrarArray()){
+        @for (item of itens(); track item.title) {
+            <p>{{item.title}}</p>
+        }
+    }
