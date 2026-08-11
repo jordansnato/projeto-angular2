@@ -1,7 +1,18 @@
 <form (submit)="cadastrar($event)">
-    <input type="text" [formField]="InterfaceForms.user">
-    <input type="password" [formField]="InterfaceForms.senha">
+    <input type="email" [formField]="InterfaceForms.email">
 
+    @if (InterfaceForms.email().touched() && InterfaceForms.email().invalid()) {
+        @for  (error of InterfaceForms.email().errors(); track error.kind) {
+            <span>{{error.message}}</span>
+        }
+      }  
+        <input type="password" [formField]="InterfaceForms.senha">
+    @if (InterfaceForms.senha().touched() && InterfaceForms.senha().invalid()) {
+        @for (error of InterfaceForms.senha().errors(); track error.kind) {
+            <span>{{error.message}}</span>
+        }
+    }
+        
     <button>conctar</button>
 </form>
 

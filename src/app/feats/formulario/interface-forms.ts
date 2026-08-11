@@ -1,4 +1,4 @@
 export interface InterfaceForms {
-    user:string,
+    email:string,
     senha:string
 }

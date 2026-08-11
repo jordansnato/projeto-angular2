@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { form, FormField } from "@angular/forms/signals";
+import { email, form, FormField, required } from "@angular/forms/signals";
 import { InterfaceForms } from './interface-forms';
 
 @Component({
@@ -12,18 +12,30 @@ export class Formulario {
 
   userConect = signal(false);
   userModel = signal<InterfaceForms>({
-    user:'',
+    email:'',
     senha: ''
   });
 
-  InterfaceForms = form(this.userModel);
+  protected InterfaceForms = form(this.userModel , (s)=>{
+    required(s.email,{message:'O usuário é obrigatório'});
+    email(s.email,{message:'O email não é do tipo email!'})
+
+     required(s.senha,{message:'O campo da senha é obrigatório'})
+  });
+
 
   cadastrar(event: SubmitEvent){
     event.preventDefault();
 
-    if(this.userModel().user === "jordan" && this.userModel().senha === 'jordan2004#'){
+    if(this.userModel().email === "jordan" && this.userModel().senha === 'jordan2004#'){
       this.userConect.set(true)
     }
+
+    this.userModel.set({
+        email:'',
+        senha: ''
+    })
+
   }
 
 }
