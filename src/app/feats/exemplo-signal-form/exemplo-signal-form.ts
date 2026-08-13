@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Interface } from './interface';
-import { form, FormField } from '@angular/forms/signals';
+import { form, FormField, required } from '@angular/forms/signals';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-exemplo-signal-form',
@@ -10,38 +11,35 @@ import { form, FormField } from '@angular/forms/signals';
 })
 export class ExemploSignalForm {
 
-  mostrarArray = signal(false)
+product = signal(false)
+mostrarProdutos = signal<Interface[]>([])
+produto = signal<Interface>({
+  title: '',
+  descricao: '',
+  preco: null
+})
 
-  itens = signal<Interface[]>([])
+produtoForm = form(this.produto , (s)=>{
+  required (s.title,{message:'Nome do produto obrigatório'})
   
-  produtoModel = signal<Interface>({
-    title: '',
-    descricao: '',
-    preco : null
+  required(s.descricao,{message:'Descrição obrigatória'})
+
+  required(s.preco,{message:'Digite o preço'})
+})
+
+adicionar(event: SubmitEvent){
+  // evita reload da pagina causado pelo submit
+  event.preventDefault();
+
+  this.mostrarProdutos.update(item => [...item, this.produto()])  
+  this.product.set(true)
+
+  this.produto.set({
+    title:'',
+    descricao:'',
+    preco:null
   })
-
-  interfaceForm = form(this.produtoModel);
-
-  cadastrarProduto(event: SubmitEvent){
-    event.preventDefault();
-
-    const produto = this.produtoModel();
-    alert("produto cadastrado")
-
-    console.log(produto)
-
-      this.produtoModel.set({
-      title: '',
-      descricao: '',
-      preco : null
-    })
-
-    this.itens.update( valor => [...valor, produto]) 
-  }
-
-  mostrarProduto(){
-    this.mostrarArray.update(valor => !valor)
-
-}
 }
 
+
+}
