@@ -1,5 +1,29 @@
-<!-- <form (submit)="">
-    <input type="text" [formField]="" placeholder="Nome aluno">
-    <input type="text" [formField]="" placeholder="Média..">
+<form (submit)="cadastrar($event)">
+    <input type="text" [formField]="alunoForm.aluno" placeholder="Nome aluno">
+        @if (alunoForm.aluno().touched() && alunoForm.aluno().invalid()) {
+            @for (error of alunoForm.aluno().errors(); track error.kind) {
+                <span>{{error.message}}</span>
+            }
+        }
+    <input type="text" [formField]="alunoForm.media" placeholder="Média..">
+    @if (alunoForm.media().touched() && alunoForm.media().invalid()) {
+        @for (error of alunoForm.media().errors(); track error.kind) {
+            <span>{{error.message}}</span>
+    
+            
+        }
+    }
     <button>Cadastrar</button>
-</form> -->
+</form>
+
+@for (item of alunos(); track $index) {
+    @if (item.media !== null) {
+        @if (item.media < 7) {
+            <p> Aluno: {{item.aluno}}, Reprovado {{item.media}}</p>
+            
+        }@else {
+            <p> Aluno: {{item.aluno}}, Aprovado {{item.media}}</p>
+
+        }
+    }
+}

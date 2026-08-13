@@ -1,0 +1,34 @@
+<form (submit)="cadastro()">
+    <input type="text" [formField]="loginForm.nome" placeholder="Nome completo">
+    <input type="text" [formField]="loginForm.email" placeholder="Email">
+    <input type="text" [formField]="loginForm.senha" placeholder="Senha">
+    <input type="text"  [formField]="loginForm.confirmeSenha" placeholder="confirme a senha">
+    <input type="text" [formField]="loginForm.nascimento" placeholder="Data nascimento 00/00/00">
+
+    <button>cadastrar</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Crie um formulário de cadastro contendo os seguintes campos:
+• Nome completo
+• E-mail
+• Senha
+• Confirmação de senha
+• Data de nascimento
+Implemente validações apropriadas para cada campo (por exemplo: preenchimento
+obrigatório, formato válido de e-mail, correspondência entre senha e confirmação, etc.)
+Após o envio do formulário com dados válidos, armazene os usuários cadastrados em um
+array e exiba essa lista abaixo do formulário
+Estilize os usuários em cards
+ -->
