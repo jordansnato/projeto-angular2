@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { form, FormField, required, validate } from "@angular/forms/signals";
 import { InterfaceExercicio5 } from './interface-exercicio5';
-import { InterfaceCadastro } from './interface-cadastro';
+import { CadastroUserService } from './cadastro-user-service';
+
 
 @Component({
   selector: 'app-execicio5',
@@ -11,8 +12,10 @@ import { InterfaceCadastro } from './interface-cadastro';
 })
 export class Execicio5 {
 
+  protected readonly cadastroUserService = inject(CadastroUserService);
+
   mensagemSenha = signal('')
-  mostrarLogin = signal<InterfaceExercicio5[]>([])
+//  protected mostrarLogin = signal<InterfaceExercicio5[]>([])
   loginModel = signal<InterfaceExercicio5>({
     nome:'',
     email:'',
@@ -21,7 +24,7 @@ export class Execicio5 {
     nascimento:null
   });
 
-  loginForm = form(this.loginModel, (s)=>{
+   loginForm = form(this.loginModel, (s)=>{
     required(s.nome, {message:'Campo nome é obrigatório'});
     required(s.email, {message:'Campo email é obrigatório'});
     required(s.senha, {message:'Campo senha é obrigatório'});
@@ -47,12 +50,10 @@ export class Execicio5 {
     const user = this.loginModel();
     event.preventDefault(); 
 
-    if(user.senha !== user.confirmeSenha ){
-      this.mensagemSenha.set('As senhas não são iguais!')
-      return;
-    }
 
-    this.mostrarLogin.update(item =>[...item , user])
+    this.cadastroUserService.cadastrarUser(user)
+
+    // this.mostrarLogin.update(item =>[...item , user])
 
     this.loginModel.set({
       nome:'',
@@ -68,8 +69,8 @@ export class Execicio5 {
   }
 
   excluir(index:number){
-    this.mostrarLogin.update(usuarios =>
-    usuarios.filter((_, i) => i !== index)
-  );
+  //   this.mostrarLogin.update(usuarios =>
+  //   usuarios.filter((_, i) => i !== index)
+  // );
   }
 }

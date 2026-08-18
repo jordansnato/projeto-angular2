@@ -40,14 +40,16 @@
             <button class="btn">cadastrar</button>
         </div>
     </form>
-    
-    @for (item of mostrarLogin(); track $index) {
-        <hr>
+    <div id="cards">
+    @for (item of cadastroUserService.mostrarLogin(); track $index) {
+        <div class="card">
         <p>Nome: {{item.nome}}</p>
         <p>Email: {{item.email}}</p>
         <button (click)="excluir($index)">excluir</button>
-        <hr>
+
+        </div>
     }
+    </div>
 
 
 
