@@ -1,12 +1,54 @@
-<form (submit)="cadastro()">
-    <input type="text" [formField]="loginForm.nome" placeholder="Nome completo">
-    <input type="text" [formField]="loginForm.email" placeholder="Email">
-    <input type="text" [formField]="loginForm.senha" placeholder="Senha">
-    <input type="text"  [formField]="loginForm.confirmeSenha" placeholder="confirme a senha">
-    <input type="text" [formField]="loginForm.nascimento" placeholder="Data nascimento 00/00/00">
 
-    <button>cadastrar</button>
-</form>
+    <form (submit)="cadastro($event)">
+        <div class="inputs-main">
+            <input type="text" [formField]="loginForm.nome" placeholder="Nome completo">
+            @if (loginForm.nome().touched() && loginForm.nome().invalid()) {
+                @for (error of loginForm.nome().errors(); track error.kind) {
+                    <p class="message">{{error.message}}</p>
+                }
+            }
+        
+        
+            <input type="email" [formField]="loginForm.email" placeholder="Email">
+             @if (loginForm.email().touched() && loginForm.email().invalid()) {
+                @for (error of loginForm.email().errors(); track error.kind) {
+                    <p class="message">{{error.message}}</p>
+                }
+            }
+        
+            <input type="password" [formField]="loginForm.senha" placeholder="Senha">
+             @if (loginForm.senha().touched() && loginForm.senha().invalid()) {
+                @for (error of loginForm.senha().errors(); track error.kind) {
+                    <p class="message">{{error.message}}</p>
+                }
+            }
+        
+            <input type="password"  [formField]="loginForm.confirmeSenha" placeholder="confirme a senha">
+             @if (loginForm.confirmeSenha().touched() && loginForm.confirmeSenha().invalid()) {
+                @for (error of loginForm.confirmeSenha().errors(); track error.kind) {
+                    <p class="message">{{error.message}}</p>
+                }
+            }
+        
+            <input type="date" [formField]="loginForm.nascimento" placeholder="Data nascimento 00/00/00">
+             @if (loginForm.nascimento().touched() && loginForm.nascimento().invalid()) {
+                @for (error of loginForm.nascimento().errors(); track error.kind) {
+                    <p class="message">{{error.message}}</p>
+                }
+            }
+        
+            <button class="btn">cadastrar</button>
+        </div>
+    </form>
+    
+    @for (item of mostrarLogin(); track $index) {
+        <hr>
+        <p>Nome: {{item.nome}}</p>
+        <p>Email: {{item.email}}</p>
+        <button (click)="excluir($index)">excluir</button>
+        <hr>
+    }
+
 
 
 
