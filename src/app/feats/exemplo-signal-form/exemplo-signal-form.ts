@@ -1,7 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Interface } from './interface';
 import { form, FormField, required } from '@angular/forms/signals';
 import { Title } from '@angular/platform-browser';
+import { CadastroUserService } from '../execicio5/cadastro-user-service';
+
 
 @Component({
   selector: 'app-exemplo-signal-form',
@@ -11,8 +13,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class ExemploSignalForm {
 
+readonly  cadastroProdutoService = inject(CadastroUserService)
+
 product = signal(false)
-mostrarProdutos = signal<Interface[]>([])
+// mostrarProdutos = signal<Interface[]>([])
 produto = signal<Interface>({
   title: '',
   descricao: '',
@@ -27,11 +31,13 @@ produtoForm = form(this.produto , (s)=>{
   required(s.preco,{message:'Digite o preço'})
 })
 
-adicionar(event: SubmitEvent){
+adicionarProduto(event: SubmitEvent){
   // evita reload da pagina causado pelo submit
   event.preventDefault();
 
-  this.mostrarProdutos.update(item => [...item, this.produto()])  
+  this.cadastroProdutoService.adicionarProduto(this.produto())
+
+  // this.mostrarProdutos.update(item => [...item, this.produto()])  
   this.product.set(true)
 
   this.produto.set({
@@ -39,6 +45,8 @@ adicionar(event: SubmitEvent){
     descricao:'',
     preco:null
   })
+
+  
 }
 
 

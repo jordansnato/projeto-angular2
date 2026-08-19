@@ -1,4 +1,4 @@
-<form (submit)="adicionar($event)">
+<form (submit)="adicionarProduto($event)">
     <input type="text" [formField]="produtoForm.title" placeholder="DIGITE O PRODUTO...">
     @if (produtoForm.title().touched() && produtoForm.title().invalid()) {
         @for (error of produtoForm.title().errors(); track error.kind) {
@@ -24,7 +24,7 @@
 </form>
 
 @if (product()) {
-    @for (item of mostrarProdutos(); track $index) {
+    @for (item of cadastroProdutoService.mostrarProdutos(); track $index) {
         <p>Produto: {{item.title}}</p>
         <p>Descrição: {{item.descricao}}</p>
         <p>Preço: {{item.preco}}</p>
