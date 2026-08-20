@@ -5,8 +5,8 @@ import { Interface } from './interface';
 export class ExemploSignalFormsServices {
     mostrarProdutos = signal<Interface[]>([])
     
-    adicionarProduto(produto:Interface){
+    adicionarProdutoArray(produto:Interface){
         this.mostrarProdutos.update(item => [...item, produto])  
-
+        
     }
 }

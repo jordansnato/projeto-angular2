@@ -15,7 +15,7 @@ export class Execicio5 {
   protected readonly cadastroUserService = inject(CadastroUserService);
 
   mensagemSenha = signal('')
-//  protected mostrarLogin = signal<InterfaceExercicio5[]>([])
+
   loginModel = signal<InterfaceExercicio5>({
     nome:'',
     email:'',
@@ -53,7 +53,6 @@ export class Execicio5 {
 
     this.cadastroUserService.cadastrarUser(user)
 
-    // this.mostrarLogin.update(item =>[...item , user])
 
     this.loginModel.set({
       nome:'',

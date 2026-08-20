@@ -1,6 +1,6 @@
 
-  @for(usuario of usuarios(); track $index){
-        <p>id: {{usuario.id}} | Nome: {{usuario.nome}}</p>
+  @for(usuario of usuariosService.usuarios(); track $index){
+        <p>id: {{usuario.id}} | Nome: {{usuario.nome}} | idade{{usuario.idade}}</p>
     }  
 
 

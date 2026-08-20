@@ -3,6 +3,7 @@ import { Interface } from './interface';
 import { form, FormField, required } from '@angular/forms/signals';
 import { Title } from '@angular/platform-browser';
 import { CadastroUserService } from '../execicio5/cadastro-user-service';
+import { ExemploSignalFormsServices } from './exemplo-signal-forms-services';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { CadastroUserService } from '../execicio5/cadastro-user-service';
 })
 export class ExemploSignalForm {
 
-readonly  cadastroProdutoService = inject(CadastroUserService)
+readonly  cadastroProdutoService = inject(ExemploSignalFormsServices)
 
 product = signal(false)
 // mostrarProdutos = signal<Interface[]>([])
@@ -35,7 +36,9 @@ adicionarProduto(event: SubmitEvent){
   // evita reload da pagina causado pelo submit
   event.preventDefault();
 
-  this.cadastroProdutoService.adicionarProduto(this.produto())
+  const produtoCadastrado = this.produto();
+
+  this.cadastroProdutoService.adicionarProdutoArray(produtoCadastrado)
 
   // this.mostrarProdutos.update(item => [...item, this.produto()])  
   this.product.set(true)
