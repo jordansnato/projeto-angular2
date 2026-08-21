@@ -9,6 +9,7 @@ import { ExemploSignalForm } from './feats/exemplo-signal-form/exemplo-signal-fo
 import { Formulario } from './feats/formulario/formulario';
 import { Exercicio } from './feats/exercicio/exercicio';
 import { Execicio5 } from './feats/execicio5/execicio5';
+import { RequisicaoPost } from './feats/requisicao-post/requisicao-post';
 
 export const routes: Routes = [
     {path:'', redirectTo:'home', pathMatch:'full'},
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path:'sgnalForm', component:ExemploSignalForm},
     {path:'formulario', component:Formulario},
     {path:'mediaAlunos', component:Exercicio},
-    {path:'login', component:Execicio5}
+    {path:'login', component:Execicio5},
+    {path: 'post', component:RequisicaoPost}
 ];

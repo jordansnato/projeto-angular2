@@ -1,0 +1,22 @@
+<form (submit)="cadastrar($event)">
+    <input type="text" placeholder="titulo" [formField]="postform.title">
+    @if (postform.title().touched() && postform.title().invalid()) {
+        @for (error of postform.title().errors(); track error.kind) {
+            <p>{{error.message}}</p>
+        }
+    }
+    <input type="text" placeholder="userId"[formField]="postform.userId">
+    @if(postform.userId().touched() && postform.userId().invalid()){
+        @for (error of postform.userId().errors(); track error.kind) {
+            <p>{{error.message}}</p>
+        }
+    }
+    <input type="text" placeholder="Body" [formField]="postform.body">
+    @if (postform.body().touched() && postform.body().invalid()) {
+        @for (error of postform.body().errors(); track error.kind) {
+            <p>{{error.message}}</p>
+        }
+    }
+</form>
+
+
